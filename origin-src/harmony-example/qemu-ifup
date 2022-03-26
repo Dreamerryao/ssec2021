@@ -1,0 +1,13 @@
+#!/bin/sh
+
+sudo brctl addbr br0
+
+sudo tunctl -t tap100
+
+sudo ifconfig tap100 0.0.0.0 up
+
+sudo ifconfig br0 192.168.1.1 up
+
+sudo brctl addif br0 tap100
+
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward

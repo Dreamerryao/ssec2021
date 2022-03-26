@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo sudo brctl delif br0 tap100
+sudo brctl delif br0 tap100
+echo sudo tunctl -d tap100
+sudo tunctl -d tap100
+echo brctl show
+brctl show
